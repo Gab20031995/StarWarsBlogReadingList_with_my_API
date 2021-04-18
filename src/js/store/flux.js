@@ -4,15 +4,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			people: [],
 			planets: [],
 			vehicles: [],
-			favorites: []
+			favorites: [],
+			token: sessionStorage.getItem("my_token") || ""
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 
 			loadPeople: async () => {
-				const url = "https://swapi.dev/api/people/";
+				const url = "https://3000-turquoise-smelt-kts86ydp.ws-us03.gitpod.io/people";
 				const response = await fetch(url);
 				const data = await response.json();
+				console.log(data);
 				setStore({ people: data.results });
 			},
 

@@ -8,11 +8,15 @@ import peopleImages from "../component/peopleImages";
 import planetsImages from "../component/planetsImages";
 import vehiclesImages from "../component/vehiclesImages";
 import ReactPlayer from "react-player";
+import { Redirect } from "react-router-dom";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
-	console.log(store.people[0]);
-
+	useEffect(() => {
+		if (!store.token) {
+			<Redirect to="/login" />;
+		}
+	}, []);
 	return (
 		<div className="container">
 			<div className="jumbotron top d-flex justify-content-center" style={{ backgroundColor: "gray" }}>

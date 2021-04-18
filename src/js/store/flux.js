@@ -1,4 +1,5 @@
 const getState = ({ getStore, getActions, setStore }) => {
+	const apiUrl = "https://3000-black-donkey-1oovt2aw.ws-us03.gitpod.io";
 	return {
 		store: {
 			people: [],
@@ -11,11 +12,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// Use getActions to call a function within a fuction
 
 			loadPeople: async () => {
-				const url = "https://3000-turquoise-smelt-kts86ydp.ws-us03.gitpod.io/people";
+				const url = apiUrl + "/people";
 				const response = await fetch(url);
 				const data = await response.json();
 				console.log(data);
-				setStore({ people: data.results });
+				setStore({ people: data });
 			},
 
 			loadPlanets: async () => {

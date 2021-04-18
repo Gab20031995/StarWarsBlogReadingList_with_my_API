@@ -8,14 +8,16 @@ import peopleImages from "../component/peopleImages";
 import planetsImages from "../component/planetsImages";
 import vehiclesImages from "../component/vehiclesImages";
 import ReactPlayer from "react-player";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
 export const Home = () => {
+	const history = useHistory();
 	const { store, actions } = useContext(Context);
 	useEffect(() => {
 		if (!store.token) {
-			<Redirect to="/login" />;
+			history.push("/login");
 		}
+		console.log("test");
 	}, []);
 	return (
 		<div className="container">

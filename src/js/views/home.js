@@ -14,10 +14,10 @@ export const Home = () => {
 	const history = useHistory();
 	const { store, actions } = useContext(Context);
 	useEffect(() => {
-		if (!store.token) {
-			history.push("/login");
-		}
-		console.log("test");
+		// if (!store.token) {
+		// 	history.push("/login", "/register", "/forgot");
+		// }
+		// console.log("test");
 	}, []);
 	return (
 		<div className="container">

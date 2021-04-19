@@ -20,13 +20,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			loadPlanets: async () => {
-				const url = "https://swapi.dev/api/planets/";
+				const url = "/planets";
 				const response = await fetch(url);
 				const data = await response.json();
-				setStore({ planets: data.results });
+				setStore({ planets: data });
 			},
 			loadVehicles: async () => {
-				const url = "https://swapi.dev/api/vehicles/";
+				const url = "/vehicles";
 				const response = await fetch(url);
 				const data = await response.json();
 				setStore({ vehicles: data.results });

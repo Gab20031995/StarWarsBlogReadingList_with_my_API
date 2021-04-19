@@ -8,6 +8,7 @@ import { PlanetsDetail } from "./views/planetsDetail";
 import { VehiclesDetail } from "./views/vehiclesDetail";
 import { Login } from "./views/login";
 import { Register } from "./views/register";
+import { Forgot } from "./views/forgot";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -25,6 +26,9 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
+						<Route exact path="/forgot">
+							<Forgot />
+						</Route>
 						<Route exact path="/register">
 							<Register />
 						</Route>

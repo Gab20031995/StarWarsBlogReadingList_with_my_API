@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Login = () => {
 	const [email, setEmail] = useState("");
@@ -12,8 +13,8 @@ export const Login = () => {
 			password: password
 		};
 
-		// fetch de LOGIN
-		fetch("https://3000-turquoise-smelt-kts86ydp.ws-us03.gitpod.io/login", {
+		// fetch de LOGIN change the URL
+		fetch("https://3000-black-donkey-1oovt2aw.ws-us03.gitpod.io/login", {
 			method: "POST",
 			body: JSON.stringify(body),
 			headers: {
@@ -48,6 +49,11 @@ export const Login = () => {
 								aria-describedby="emailHelp"
 								placeholder="Insert your Email"
 							/>
+							<p />
+
+							<Link to={"/forgot"} type="submit" className="btn btn-outline-danger">
+								Forgot password
+							</Link>
 						</div>
 						<div className="mb-3">
 							<label htmlFor="exampleInputPassword1" className="form-label">
@@ -65,13 +71,13 @@ export const Login = () => {
 							</div>
 						</div>
 
-						<div className="col-3 text-center pt-2 rounded">
-							<label className="text-white form-check-label">REMEMBER ME</label>
-						</div>
-						<br />
 						<button type="submit" className="btn btn-outline-warning">
 							Submit
 						</button>
+						<hr />
+						<Link to={"/register"} type="submit" className="btn btn-outline-light">
+							Register
+						</Link>
 					</form>
 				</div>
 			</div>
